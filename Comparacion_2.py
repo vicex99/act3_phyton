@@ -3,17 +3,22 @@ def menu(argument):
         1: isSubcadena,
         2: ordenAlfa
     }
-    ver = switch.get(int(argument), lambda: "Invalid number")
-    ver()
+    try:
+        ver = switch.get(int(argument), lambda: "Invalid number")
+        print("resultado: " + ver())
+
+    except:
+        print("Invalid letter")
 
 
 def isSubcadena():
+    print("Comparando alfabeticamente")
     strPrimera = input("inserte primera cadena\n")
     strSegunda = input("inserte segunda cadena\n")
     if strPrimera.find(strSegunda) != -1:
-        print("siiiii")
+        return "siiiiiiiii estaaa"
     else:
-        print("nooooooooo")
+        return "nooooooooo estaaa"
 
 
 def ordenAlfa():
@@ -21,11 +26,11 @@ def ordenAlfa():
     strSegunda = input("inserte segunda cadena\n")
     palabras = [strPrimera, strSegunda]
     palabras.sort()
-    print("\n" + palabras[0])
+    return "\n" + palabras[1]
 
 
 menu(input("""
     elije opcion:
         1 - mira si uno es sub cadena o no
-        2 - enseña cual es la anterior alfanumericamente
+        2 - enseña cual es la anterior alfabeticamente
     """))

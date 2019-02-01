@@ -20,14 +20,15 @@ class Sacacorchos:
     def destapar(self, botella):
         if botella.corcho is not None:
             self.corcho = botella.corcho
+            botella.corcho = None
             print("sacado corcho " + self.corcho.bodega + " de la botella ")
         else:
             print("la botella no tenia corcho")
-        botella.corcho = None
 
 
-def limpiar():
-    Sacacorchos.corcho = None
+def limpiar(sacacorchos):
+    sacacorchos.corcho = None
+    print("sacacorchos limpio")
 
 
 corcho1 = Corcho("bodega vieja")
@@ -35,6 +36,7 @@ bot = Botella(corcho1)
 sacacorchos = Sacacorchos()
 sacacorchos.destapar(bot)
 sacacorchos.destapar(bot)
+limpiar(sacacorchos)
 
 
 

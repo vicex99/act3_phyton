@@ -5,8 +5,11 @@ def menu(argument):
         3: ClaveOculta,
         4: puntosDigitos
     }
-    ver = switch.get(int(argument), lambda: "Invalid number")
-    ver()
+    try:
+        ver = switch.get(int(argument), lambda: "Invalid number")
+        print(ver())
+    except:
+        print("Invalid letter")
 
 
 def Separa():
